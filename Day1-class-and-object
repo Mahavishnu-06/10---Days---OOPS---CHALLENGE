@@ -1,3 +1,13 @@
+
+/*
+ * 🧠 10-Day OOP Mastery Challenge
+ * Day 1: Class & Object (Foundation)
+ * Author: Vishnu J
+ * Description: Demonstrates creation of classes, objects, and basic methods 
+ *              using a Student example with attributes (name, rollNo, marks),
+ *              and methods to display details and calculate grade.
+ */
+
 package OOPS.TASKS; 
 class BankAccount{
      String AccountHolderName;
