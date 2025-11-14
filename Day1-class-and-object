@@ -1,0 +1,28 @@
+package OOPS.TASKS; 
+class BankAccount{
+     String AccountHolderName;
+     int AccountNumber;
+     double Balance=0;
+     BankAccount(String name,int no){
+        this.AccountHolderName=name;
+        this.AccountNumber=no;
+     }
+     void displayAccountDetails(){
+        System.out.println(AccountHolderName+" account number is "+AccountNumber+" and their balance amount is "+Balance);
+     }
+     void deposit(double amount){
+        Balance=Balance+amount;
+     }
+     void withdraw(double amount){
+        Balance=Balance-amount;
+     }
+}
+public class Task1{ 
+    public static void main(String[] args) {
+        BankAccount vishnu=new BankAccount("vishnu",3123);
+        vishnu.deposit(10000.34);
+        vishnu.displayAccountDetails();
+        vishnu.withdraw(2000);
+        vishnu.displayAccountDetails();
+    }
+}
