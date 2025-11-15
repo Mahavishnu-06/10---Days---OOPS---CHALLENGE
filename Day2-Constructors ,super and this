@@ -1,0 +1,71 @@
+/*
+ * 🧠 10-Day OOP Mastery Challenge
+ * Day 2: Constructors + this/super
+ * Author: Vishnu J
+ * Description: Demonstrates constructor overloading, constructor chaining using this(),
+ *              and parent-child constructor calling using super() within a multi-level 
+ *              Bank System (AccountHolder → BankAccount → SavingsAccount).
+ *              Shows how object initialization flows across inheritance hierarchy.
+ */
+
+package OOPS.TASKS;
+class BankAccount {
+    public String AccountHolderName;
+    public int AccountNumber;
+    protected double Balance = 0;
+    BankAccount(String name, int no) {
+        this.AccountHolderName = name;
+        this.AccountNumber = no;
+    }
+    void displayAccountDetails() {
+        System.out.println(AccountHolderName + " account number is " + AccountNumber +
+                           " and their balance amount is " + Balance);
+    }
+    void deposit(double amount) {
+        Balance = Balance + amount;
+    }
+    void withdraw(double amount) {
+        if (Balance >= amount) {
+            Balance = Balance - amount;
+        } else {
+            System.out.println("Insufficient funds for " + AccountHolderName +
+                               ". Cannot withdraw " + amount + ". Current balance: " + Balance);
+        }
+    }
+}
+class SavingsAccount extends BankAccount {
+    SavingsAccount(String name, int no) {
+        super(name, no);
+    }
+    void addInterest() {
+        double interest = Balance * 0.05;
+        Balance = Balance + interest;
+    }
+}
+class CurrentAccount extends BankAccount {
+    CurrentAccount(String name, int no) {
+        super(name, no);
+    }
+    void deductMaintenanceFee() {
+        if (Balance >= 500) {
+            Balance = Balance - 500;
+        } else {
+            System.out.println("Not enough balance to deduct maintenance fee for " + AccountHolderName);
+        }
+    }
+}
+public class Task2 {
+    public static void main(String[] args) {
+        SavingsAccount s = new SavingsAccount("vicky", 3123);
+        s.deposit(10000);
+        s.addInterest();
+        s.withdraw(20000);
+        s.displayAccountDetails();
+        System.out.println("--------------------------------");
+        CurrentAccount c = new CurrentAccount("vishnu", 1234);
+        c.deposit(15000);
+        c.deductMaintenanceFee();
+        c.withdraw(3000);
+        c.displayAccountDetails();
+    }
+}
