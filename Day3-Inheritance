@@ -1,0 +1,88 @@
+// Demonstrates constructor chaining (this, super) and multi-level inheritance using a Bank System.
+// Shows how each subclass extends parent behavior and reuses methods with super.displayAccountDetails().
+
+
+
+
+package OOPS.TASKS;
+class AccountHolder{
+    String name;
+    int age;
+    AccountHolder(){
+        this("unknown",18);
+    }
+    AccountHolder(String name,int age){
+        this.name=name;
+        this.age=age;
+    }
+    void displayAccountDetails(){
+        System.out.println("AccountHolder name is "+name+" and their age is "+age);
+    }
+}
+class BankAccount extends AccountHolder{
+    int accountnumber;
+    double balance;
+    BankAccount(String name,int age,int accno,double bal){
+        super(name,age);
+        this.accountnumber=accno;
+        this.balance=bal;
+    }
+    void displayAccountDetails(){
+        super.displayAccountDetails();
+        System.out.println("Accountnumber is "+accountnumber+" and their balance "+balance);
+    }
+}
+class SavingsAccount extends BankAccount{
+    int interestrate;
+    SavingsAccount(String name,int age,int accno,double bal,int interest){
+        super(name,age,accno,bal);
+        this.interestrate=interest;
+    }
+    void displayAccountDetails(){
+        super.displayAccountDetails();
+        System.out.println("Interestrate is "+interestrate);
+    } 
+}
+public class Task3{
+    public static void main(String[] args) {
+        AccountHolder a=new AccountHolder();
+        BankAccount b=new BankAccount("vishnu",20,3123,149.51);
+        SavingsAccount s=new SavingsAccount("vicky",21,3456,200,5);
+        a.displayAccountDetails();
+        b.displayAccountDetails();
+        s.displayAccountDetails();
+        // System.out.println(a.name+" "+a.age);
+        // System.out.println(b.name+" "+b.age+" "+b.accountnumber+" "+b.balance);
+        // System.out.println(s.name+" "+s.age+" "+s.accountnumber+" "+s.balance+" "+s.interestrate);
+    }
+}
+// package OOPS.TASKS;
+// class Person{
+//    String name;
+//    int age;
+//    Person(){
+//      this("unknown",20);
+//     // name="vishnu";
+//     // age=22;
+//    } 
+//    Person(String name,int age){
+//      this.name=name;
+//      this.age=age;
+//    }
+// }
+// class Employee extends Person{
+//     double salary;
+//     Employee(String name,int age,double salary){
+//         super(name,age);
+//         this.salary=salary; 
+//     }
+// }
+// public class Task3 {
+//     public static void main(String[] args) {
+//         Person p=new Person();
+//         Person p1=new Person("vishnu", 20);
+//         Employee e=new Employee("vishnu", 20, 100000);
+//         System.out.println(p.name+" age is "+p.age);
+//         System.out.println(e.name+" age is "+e.age+" and is salary "+e.salary);
+//     }
+// }
