@@ -1,0 +1,75 @@
+package OOPS.TASKS;
+class banktransaction{
+    int deposit(int amount){
+        return amount;
+    }
+    double deposit(double amount){
+        return amount; 
+    }
+    void deposit(String chequenumber,double amount){
+        System.out.println("Chequenumber is:"+chequenumber+"amount is:"+amount);
+    }
+    void deposit(String upiid,int amount){
+        System.out.println("upiid is:"+upiid+"amount is:"+amount);
+    }
+}
+public class Task4{
+    public static void main(String[] args) {
+        banktransaction b=new banktransaction();
+        System.out.println(b.deposit(5000));
+        System.out.println(b.deposit(5001.3));
+        b.deposit("756RTD", 678.6);
+        b.deposit("vishnu2345", 678);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import java.util.concurrent.Callable;
+
+// class Calculator{
+//     void add(int a,int b){
+//         System.out.println("value:"+a+" value:"+b);
+//     }
+//     void add(double a,double b){
+//          System.out.println("value:"+a+" value:"+b);
+//     }
+//     void add(int a,int b,int c){
+//         System.out.println("value:"+a+" value:"+b+" value:"+c);
+//     }
+//     void add(String a,String b){
+//         System.out.println("Variable "+a+"Variable "+b);
+//     }
+//     void multlipy(int a,int b){
+//         System.out.println("Multiply value:"+a*b);
+//     }
+//     void multiply(double a,int b){
+//         System.out.println("Multiply value:"+a*b);
+//     }
+// }
+// public class Task4 {
+//     public static void main(String[] args) {
+//         Calculator c=new Calculator();
+//         c.add("vishnu","vicky");
+//         c.add(2,3);
+//         c.add(3,4,5);
+//         c.add(2.3,3.5);
+//         c.multiply(2.3, 6);
+//         c.multlipy(3,6 );
+//     }
+// }
