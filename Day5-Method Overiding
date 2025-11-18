@@ -1,0 +1,122 @@
+package OOPS.TASKS;
+class BankAccount{
+    double calculateInterest(){
+        return 0;
+    }
+}
+class SavingsAccount extends BankAccount{
+    int interest;
+    SavingsAccount(int inte){
+      this.interest=inte;
+    }
+    double calculateInterest(){
+        return interest;
+    }
+}
+class CurrentAccount extends BankAccount{
+    int interest;
+    CurrentAccount(int intr){
+        this.interest=intr;
+    }
+    double calculateInterest(){
+        return interest;
+    }
+}
+public class Task5{
+    public static void main(String[] args) {
+        BankAccount b1=new SavingsAccount(5);
+        System.out.println(b1.calculateInterest());
+        BankAccount b2=new CurrentAccount(2);
+        System.out.println(b2.calculateInterest());
+        BankAccount[] bank={new SavingsAccount(6),new CurrentAccount(8)};
+        for(BankAccount b:bank){
+            System.out.println(b.calculateInterest());
+        } 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class shape{
+//     double area(){
+//         return 0;
+//     }
+// }
+// class circle extends shape{
+//     int radi;
+//     circle(int radius){
+//         this.radi=radius;
+//     }
+//     @Override
+//     double area(){
+//         return 3.14*radi*radi;
+//     }
+// }
+// class Rectangle extends shape{
+//     int len,bre;
+//     Rectangle(int length,int breadth){
+//         this.len=length;
+//         this.bre=breadth;
+//     }
+//     @Override
+//     double area(){
+//         return len*bre;
+//     }
+// }
+// public class Task5 {
+//     public static void main(String[] args) {
+//         shape s1=new shape();
+//         System.out.println(s1.area());
+//         shape s2=new circle(3);
+//         System.out.println(s2.area());
+//         shape s3=new Rectangle(3,4 );
+//         System.out.println(s3.area());
+//         circle s4=new circle(5);
+//         System.out.println(s4.area());
+//         shape[] shapes={new circle(7),new Rectangle(6,7 )};
+//         for(shape s:shapes){
+//             System.out.println(s.area());
+//         }
+//     }
+// }
