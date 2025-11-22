@@ -1,0 +1,35 @@
+package OOPS.TASKS;
+class BankAccount{
+    private double balance;
+    void deposit(double amount){
+        balance=balance+amount;
+    }
+    void withdraw(double amount){
+        if(balance>=amount){
+            balance=balance-amount;
+        }else{
+            System.out.println("Insufficient amount");
+        }
+    }
+    // void setBalance(double amount){
+    //     if(amount>=0){
+    //         this.balance=amount;
+    //     }else{
+    //         System.out.println("Invalid amount");
+    //     }
+    // }
+    double getBalance(){
+        return balance;
+    }
+}
+public class Task6 {
+    public static void main(String[] args) {
+        BankAccount b=new BankAccount();
+        b.deposit(10000);
+        b.withdraw(5001.5);
+        System.out.println(b.getBalance());
+        // b.setBalance(10000);
+        b.withdraw(7000);
+        System.out.println("Balance amount :"+b.getBalance());
+    }
+}
