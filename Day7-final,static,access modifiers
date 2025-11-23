@@ -1,0 +1,15 @@
+package OOPS.TASKS;
+class university{
+    static String universityname="St.joseph's";
+    final int collegecode=3123;
+    static void getuniversityInfo(){
+        System.out.println("Name of the colleg "+universityname);
+    }
+}
+public class Task7 {
+public static void main(String[] args) {
+    university.getuniversityInfo();
+    university.universityname="Sathyabama";
+    university.getuniversityInfo();
+}
+}
