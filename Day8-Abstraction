@@ -1,0 +1,98 @@
+package OOPS.TASKS;
+
+abstract class BankAccount {
+    String name;
+    int accountNumber;
+
+    BankAccount(String name, int accNo) {
+        this.name = name;
+        this.accountNumber = accNo;
+    }
+
+    abstract double calculateInterest();
+
+    void showAccountHolder() {
+        System.out.println("Account Holder: " + name);
+    }
+}
+
+class SBIBank extends BankAccount {
+    SBIBank(String n, int no) {
+        super(n, no);
+    }
+
+    @Override
+    double calculateInterest() {
+        return 0.05;
+    }
+}
+
+class HDFCBank extends BankAccount {
+    HDFCBank(String n, int no) {
+        super(n, no);
+    }
+
+    @Override
+    double calculateInterest() {
+        return 0.06;
+    }
+}
+
+public class Task8 {
+    public static void main(String[] args) {
+        BankAccount b1 = new SBIBank("Vishnu", 3123);
+        BankAccount b2 = new HDFCBank("Vicky", 4567);
+
+        b1.showAccountHolder();
+        System.out.println("Interest: " + b1.calculateInterest());
+
+        b2.showAccountHolder();
+        System.out.println("Interest: " + b2.calculateInterest());
+    }
+}
+
+
+// package OOPS.TASKS;
+// abstract class Appliance {
+//     abstract void turnOn();
+// }
+// class Fan extends Appliance {
+//     @Override
+//     void turnOn() {
+//         System.out.println("Fan has been turned ON (from Appliance)");
+//     }
+// }
+// class Light extends Appliance {
+//     @Override
+//     void turnOn() {
+//         System.out.println("Light has been turned ON (from Appliance)");
+//     }
+// }
+// interface RemoteControl {
+//     public void turnOn();
+//     public void turnOff();
+// }
+// class SmartFan implements RemoteControl {
+
+//     @Override
+//     public void turnOn() {
+//         System.out.println("SmartFan is ON using remote.");
+//     }
+
+//     @Override
+//     public void turnOff() {
+//         System.out.println("SmartFan is OFF using remote.");
+//     }
+// }
+// public class Task8 {
+//     public static void main(String[] args){
+//         Appliance a1 = new Fan();
+//         Appliance a2 = new Light();
+//         a1.turnOn();
+//         a2.turnOn();
+//         System.out.println("----------------------");
+//         RemoteControl r1 = new SmartFan();
+//         r1.turnOn();
+//         r1.turnOff();
+//     }
+// }
