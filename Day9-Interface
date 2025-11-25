@@ -1,0 +1,42 @@
+package OOPS.TASKS;
+interface ATMOperations {
+    void withdraw();
+    void deposit();
+    void checkBalance();
+}
+class SBIATM implements ATMOperations {
+    @Override
+    public void withdraw() {
+        System.out.println("SBI ATM Withdrawal");
+    }
+    @Override
+    public void deposit() {
+        System.out.println("SBI ATM Deposit");
+    }
+    @Override
+    public void checkBalance() {
+        System.out.println("SBI ATM Balance Check");
+    }
+}
+class PaytmATM implements ATMOperations {
+    @Override
+    public void withdraw() {
+        System.out.println("Paytm ATM Withdrawal");
+    }
+    @Override
+    public void deposit() {
+        System.out.println("Paytm ATM Deposit");
+    }
+    @Override
+    public void checkBalance() {
+        System.out.println("Paytm ATM Balance Check");
+    }
+}
+public class Task9 {
+    public static void main(String[] args) {
+        ATMOperations sbi = new SBIATM();
+        ATMOperations paytm = new PaytmATM();
+        sbi.withdraw();
+        paytm.deposit();
+    }
+}
