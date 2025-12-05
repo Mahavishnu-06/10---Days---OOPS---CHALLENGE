@@ -1,0 +1,53 @@
+package OOPS.Arrraylist;
+import java.util.*;
+class customarrlist<Type>{
+   Object data[];
+   int capacity=10;
+   int size=0;
+   customarrlist(){
+    data=new Object[capacity];
+   }
+   void add(Type value){
+    if(size==data.length){
+        resize();
+    }
+    data[size++]=value;
+   }
+   void resize(){
+    Object temp[]=new Object[2*data.length];
+    for(int i=0;i<data.length;i++){
+        temp[i]=data[i];
+    }
+    data=temp;
+   }
+   int size(){
+    return size;
+   }
+   void set(int index,Type element){
+    data[index]=element;
+   }
+   Type get(int index){
+    return (Type)data[index];
+   }
+    public String toString(){
+    return Arrays.toString(data);
+  }
+}
+public class customArraylist {
+    public static void main(String[] args) {
+        customarrlist<Integer> ans=new customarrlist<>();
+        for(int i=0;i<12;i++){
+            ans.add(5*i);
+        }
+        System.out.println(ans);
+        System.out.println(ans.size());
+        System.out.println(ans.get(11));
+        customarrlist<String> list=new customarrlist<>();
+        for(int i=0;i<11;i++){
+            list.add("vishnu");
+        }
+        System.out.println(list);
+        System.out.println(list.size());
+        System.out.println(list.get(11));
+    }
+}
